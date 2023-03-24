@@ -1,10 +1,12 @@
-import cart from './Assets/cart.png'
+import IconButton from '@mui/material/IconButton';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+
 const CartWidget = () => {
     return (
-        <div>
-        <img src={cart} alt="cart-widget"/>
-        0
-        </div>
+    <div>
+    <IconButton color="primary" aria-label="add to shopping cart"><AddShoppingCartIcon/>0
+    </IconButton>
+    </div>
     )
 }
 export default CartWidget
