@@ -28,8 +28,8 @@ function NavBar() {
                 <Nav className="justify-content-end flex-grow-1 pe-3">
                   <Nav.Link id="btn" href="#action1">Alimento para Perros</Nav.Link>
                   <Nav.Link id="btn" href="#action2">Alimento para Gatos</Nav.Link>
-                  <Nav.Link id="btn" href="#action1">Indumentaria y Accsesorios</Nav.Link>
-                  <Nav.Link id="btn" href="#action2">Cuchas y camitas</Nav.Link>
+                  <Nav.Link id="btn" href="#action1">Indumentaria y Accesorios</Nav.Link>
+                  <Nav.Link id="btn" href="#action2">Cuchas y Camitas</Nav.Link>
                   <Nav.Link id="btn" href="#action2">Juguetes</Nav.Link>
                 </Nav>
                 <Form className="d-flex">
