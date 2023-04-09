@@ -45,7 +45,7 @@ function NavBar() {
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
-          </Container>
+           </Container>
         </Navbar>
       ))}
     </>
