@@ -1,3 +1,6 @@
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 import useCount from "./myCountHook/useCount";
 
 export const ItemCount = () => {
@@ -5,11 +8,12 @@ export const ItemCount = () => {
     
     return (
         <div>
-            <h1>Counter: {counter}</h1>
-            <button className="Button" onClick={increment}>+</button>
-            <button className="Button" onClick={addTochart}>Agregar al carrito</button>
-            <button className="Button" onClick={decrement}>-</button>
-            
+            <Button>Counter: {counter}</Button>
+            <Stack direction="row" spacing={2}>
+            <Button className="Button" variant="outlined" onClick={increment}>+</Button>
+            <Button className="Button" variant="outlined" onClick={addTochart}>Agregar al carrito</Button>
+            <Button className="Button" variant="outlined" onClick={decrement}>-</Button>
+            </Stack>    
         </div>
     )
 }
