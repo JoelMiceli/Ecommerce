@@ -2,21 +2,19 @@
 const Item = ({ id, name, img, price, description, stock }) => {
 
   return (
-    <div class="card border-dark mb-3" style={{maxWidth: 450}}>
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src={img} class="img-fluid rounded-start" alt=""/>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{name}</h5>
-        <p class="card-text"> {description}</p>
-        <p class="card-text">Stock: {stock}</p>
-        <p class="card-text">Precio: {price}</p>
-      </div>
-    </div>
-  </div>
-</div>
+<article className="CardItem">
+<header className="Header">
+<h2 className="ItemHeader"> {name} </h2>
+</header>
+<picture> <img src={img} alt="" className="ItemImg"/></picture> 
+<section>
+ <p className="Info"> Precio: ${price} </p> 
+ <p className="Info"> Stock Disponible:  {stock} </p> 
+</section>
+<footer className="ItemFooter"> 
+<link to={`/item/${id}`} className="Option"> Ver detalle </link>
+</footer>
+</article>
   );
 };
 
