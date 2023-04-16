@@ -4,19 +4,20 @@ const ItemDetail = ({
   id,name,img,category,description,price, stock,}) => {
 
     return (
-      <article className="CardItem">
-  <header className="Header">
-  <h2 className="ItemHeader"> {name} </h2>
-  </header>
-  <picture> <img src={img} alt={name} className="ItemImg"/></picture> 
-  <section>
-   <p className="Info"> Precio: ${price} </p> 
-   <p className="Info"> Stock Disponible:  {stock} </p> 
-  </section>
-  <footer className="ItemFooter"> <button className="Option"> Ver detalle </button>
-  </footer>
-  <ItemCount/>
-  </article>
+      <div class="card mb-3" style={{maxWidth: 450}}>
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src={img} class="img-fluid rounded-start" alt={name}/>
+          <div class="card-body">
+            <h5 class="card-title">{name}</h5>
+            <p class="card-text">Precio: ${price}</p>
+            <p class="card-text">Stock Disponible: {stock}</p>
+            <p class="card-text">{description}</p>
+          </div>
+          <ItemCount/>
+        </div>
+      </div>
+    </div>
     );
 }
 
