@@ -146,7 +146,7 @@ export const getProducts = () => {
 export const getProductsById = (productId) => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(products.find((prod) => prod.id === parseInt(productId)));
+      resolve(products.find((prod) => prod.id === productId));
     }, 500);
   });
 };
