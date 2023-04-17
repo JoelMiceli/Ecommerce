@@ -6,6 +6,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Logo from "../LogoStore/Logo";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -37,21 +38,51 @@ function NavBar() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link id="btn" href="../Perros/Perros.js">
+                  <NavLink
+                    to={`/category/Alimento para Perros`}
+                    id="btn"
+                    className={({ isActive }) =>
+                      isActive ? "ActiveOption" : "Option"
+                    }
+                  >
                     Alimento para Perros
-                  </Nav.Link>
-                  <Nav.Link id="btn" href="#action2">
+                  </NavLink>
+                  <NavLink
+                    to={`/category/Alimento para Gatos`}
+                    id="btn"
+                    className={({ isActive }) =>
+                      isActive ? "ActiveOption" : "Option"
+                    }
+                  >
                     Alimento para Gatos
-                  </Nav.Link>
-                  <Nav.Link id="btn" href="#action3">
+                  </NavLink>
+                  <NavLink
+                    to={`/category/Indumentaria y Accesorios`}
+                    id="btn"
+                    className={({ isActive }) =>
+                      isActive ? "ActiveOption" : "Option"
+                    }
+                  >
                     Indumentaria y Accesorios
-                  </Nav.Link>
-                  <Nav.Link id="btn" href="#action4">
+                  </NavLink>
+                  <NavLink
+                    to={`/category/Cuchas y Camitas`}
+                    id="btn"
+                    className={({ isActive }) =>
+                      isActive ? "ActiveOption" : "Option"
+                    }
+                  >
                     Cuchas y Camitas
-                  </Nav.Link>
-                  <Nav.Link id="btn" href="#action5">
+                  </NavLink>
+                  <NavLink
+                    to={`/category/Juguetes`}
+                    id="btn"
+                    className={({ isActive }) =>
+                      isActive ? "ActiveOption" : "Option"
+                    }
+                  >
                     Juguetes
-                  </Nav.Link>
+                  </NavLink>
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control
