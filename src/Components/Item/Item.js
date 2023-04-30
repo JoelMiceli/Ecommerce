@@ -12,7 +12,6 @@ const Item = ({ id, name, img, description, price, stock }) => {
             <h5 className="card-title">{name}</h5>
             <p className="card-text">Precio: ${price}</p>
             <p className="card-text">Stock Disponible: {stock}</p>
-            <p className="card-text">{description}</p>
             <Link to={`/item/${id}`} className="Option">
               Ver detalle
             </Link>

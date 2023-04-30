@@ -3,9 +3,10 @@ import Item from "../Item/Item";
 
 const ItemList = ({ products }) => {
   return (
+    
     <div className="ListGroup">
-      {products.map((prod) => (
-        <Item key={prod.id} {...prod} />
+      {products.slice(0,6).map((prod) => (
+      <Item key={prod.id} {...prod} />
       ))}
     </div>
   );
