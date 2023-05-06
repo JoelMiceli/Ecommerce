@@ -32,10 +32,7 @@ addItem(item, quantity)
           {
             quantityAdded > 0? (
               <Link to='/cart' className="option">Terminar Compra</Link>
-            ) : (
-          
-          <ItemCount initial ={1} stock={stock} onAdd={handleOnAdd} />
-            )
+            ) : (<ItemCount initial ={1} stock={stock} onAdd={handleOnAdd} />)
         }
         </div>
       </div>

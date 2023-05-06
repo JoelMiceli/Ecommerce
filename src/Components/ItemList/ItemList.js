@@ -6,7 +6,7 @@ const ItemList = ({ products }) => {
     <div className="prodDestacados">
       <h1><span class="badge text-bg-success">⭐Productos Destacados⭐</span></h1>
     <div className="ListGroup">
-      {products.map((prod) => (
+      {products.slice(0, 6).map((prod) => (
       <Item key={prod.id} {...prod} />
       ))}
     </div>

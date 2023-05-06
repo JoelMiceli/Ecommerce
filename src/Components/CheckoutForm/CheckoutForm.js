@@ -14,57 +14,32 @@ const CheckoutForm = ({ onConfirm }) => {
     };
 
     return (
-        <div className= 'containerCheckOutForm '>
-            <form onSubmit={handleConfirm} className="checkout-form">
-                <div className="input-group">
-                    <label htmlFor="name" className="form-label">
-                        Nombre
-                    </label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder={'Nombre'}
-                        onChange={({ target }) => setName(target.value)}
-                        required
-                        className="form-input"
-                    />
-                </div>
-                <div className="input-group">
-                    <label htmlFor="phone" className="form-label">
-                        Teléfono
-                    </label>
-                    <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        placeholder="Teléfono"
-                        onChange={({ target }) => setPhone(target.value)}
-                        required
-                        className="form-input"
-                    />
-                </div>
-                <div className="input-group">
-                    <label htmlFor="email" className="form-label">
-                        Correo electrónico
-                    </label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder={'Correo electrónico'}
-                        onChange={({ target }) => setEmail(target.value)}
-                        required
-                        className="form-input"
-                    />
-                </div>
-                <div className="button-group">
-                    <button type="submit" className="form-button">
-                        Confirmar pedido
-                    </button>
-                </div>
-            </form>
-        </div>
+        
+    <div className= 'containerCheckOutForm '>
+    <form onSubmit={handleConfirm} class="row g-3 needs-validation" novalidate>
+    <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="validationCustom01" onChange={({ target }) => setName(target.value)} required/>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+    </div>
+    <div class="col-md-4">
+    <label for="validationCustom02" class="form-label">Teléfono</label>
+    <input type="text" class="form-control" id="validationCustom02" onChange={({ target }) => setPhone(target.value)} required/>
+    <div class="valid-feedback">
+      Looks good!
+    </div>
+    </div>
+    <div class="col-md-4">
+    <label for="exampleFormControlInput1" class="form-label">Email</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" onChange={({ target }) => setEmail(target.value)}placeholder="name@example.com"/>
+    </div>
+    <div className="button-group">
+        <button type="button" class="btn btn-outline-secondary">Confirmar Pedido</button>
+    </div>
+    </form>
+    </div>
     );
 };
 
