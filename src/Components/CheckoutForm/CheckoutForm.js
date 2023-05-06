@@ -14,7 +14,7 @@ const CheckoutForm = ({ onConfirm }) => {
     };
 
     return (
-        <div className= 'containerCheckOutForm'>
+        <div className= 'containerCheckOutForm '>
             <form onSubmit={handleConfirm} className="checkout-form">
                 <div className="input-group">
                     <label htmlFor="name" className="form-label">

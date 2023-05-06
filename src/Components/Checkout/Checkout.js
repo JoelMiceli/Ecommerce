@@ -23,7 +23,7 @@ const Checkout = () => {
             const docRef = await addDoc(orderCollection, order);
             setOrderId(docRef.id);
             
-            const productsRef = doc(db, "products", cart);
+            const productsRef = doc(db, "Products", cart);
             for (const item of cart) {
                 updateDoc(productsRef, {
                     stock: item.product.stock - item.quantity 
