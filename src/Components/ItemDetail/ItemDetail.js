@@ -10,9 +10,7 @@ const {addItem} = useContext(CartContext);
 const handleOnAdd = (quantity) => {
   setQuantityAdded(quantity);
 
-const item = {
-  id, name, price, quantity
-};
+const item = { id, name, price, quantity };
 
 addItem(item, quantity)
 

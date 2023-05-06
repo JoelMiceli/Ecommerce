@@ -9,7 +9,7 @@ const CartWidget = () => {
     
     return (
     <div>
-    <Link to='/cart' className='CartWidget'>
+    <Link to='/cart' className='CartWidget' style={{ display: totalQuantity > 0 ? 'block': 'none'}}>
     <IconButton color="primary" aria-label="add to shopping cart"><AddShoppingCartIcon/> {totalQuantity}
     </IconButton>
     </Link>

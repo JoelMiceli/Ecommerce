@@ -1,38 +1,71 @@
-import { useContext, useState } from "react";
-import { CartContext } from "../context/CartContext";
+import { useState } from "react";
 
-const Checkout = () => {
-    const [loading, setLoading] = useState(false);
-    const [orderId, setOrderId] = useState('');
-    const { cart, getTotalPrice, clearCart } = useContext(CartContext)
+const CheckoutForm = ({ onConfirm }) => {
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [email, setEmail] = useState('');
 
-    const createOrder = async ({ UnameUser, phone, email }) => {
-        setLoading(true)
-        try {
-            const order  = {
-                buyer: { UnameUser, phone, email },
-                items: cart,
-                total: getTotalPrice(),
-                date: Timestamp.fromDate(new Date())
-            }
-            
-            const orderCollection = collection(db, "orders");
-            const docRef = await addDoc(orderCollection, order);
-            setOrderId(docRef.id);
+    const handleConfirm = (event) => {
+        event.preventDefault();
 
-            const productsRef = doc(db, "products", cart);
-            for(const item of cart) {
-                updateDoc(productsRef, {
-                stock: item.products.stock - item.quantity
-            });
-        }
-        clearCart();
-    } catch(error) {
-        console.log(error);
-    } finally{
-        setLoading(false);
-    }
-}
-}
+        const userData = { name, phone, email };
 
-export default Checkout;
+        onConfirm(userData);
+    };
+
+    return (
+        <div className= 'containerCheckOutForm'>
+            <form onSubmit={handleConfirm} className="checkout-form">
+                <div className="input-group">
+                    <label htmlFor="name" className="form-label">
+                        Nombre
+                    </label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder={'Nombre'}
+                        onChange={({ target }) => setName(target.value)}
+                        required
+                        className="form-input"
+                    />
+                </div>
+                <div className="input-group">
+                    <label htmlFor="phone" className="form-label">
+                        Teléfono
+                    </label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Teléfono"
+                        onChange={({ target }) => setPhone(target.value)}
+                        required
+                        className="form-input"
+                    />
+                </div>
+                <div className="input-group">
+                    <label htmlFor="email" className="form-label">
+                        Correo electrónico
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder={'Correo electrónico'}
+                        onChange={({ target }) => setEmail(target.value)}
+                        required
+                        className="form-input"
+                    />
+                </div>
+                <div className="button-group">
+                    <button type="submit" className="form-button">
+                        Confirmar pedido
+                    </button>
+                </div>
+            </form>
+        </div>
+    );
+};
+
+export default CheckoutForm;
