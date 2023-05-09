@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap"
 
 
 const Cart = () => {
-    const { cart, clearCart, removeItem, increaseQuantity, decreaseQuantity, getTotalPrice } = useContext(CartContext)
+    const { cart, clearCart, removeItem, increaseQuantity, decreaseQuantity, getTotalItems, getTotalPrice } = useContext(CartContext)
 
     return (
         <div className='cart-container'>
@@ -34,7 +34,7 @@ const Cart = () => {
             <h2>Resumen del Carrito</h2>
         <div className="summary-item">
                     
-        <div>Productos {cart.reduce((total, item) => total + item.quantity, 0)}</div>
+        <div>Productos {getTotalItems()}</div>
         </div>
         <div className="summary-item">
                     

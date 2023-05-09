@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { db } from "../FireBaseEcommerce/database";
 import CheckoutForm from '../CheckoutForm/CheckoutForm';
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../Components/context/CartContext';
 import { collection, addDoc, doc, updateDoc } from 'firebase/firestore';
 
 const Checkout = () => {
@@ -12,7 +12,6 @@ const Checkout = () => {
     const createOrder = async ({ name, phone, email }) => {
         setLoading(true)
         try {
-            
             const order = {
                 buyer: { name, phone, email },
                 items: cart,

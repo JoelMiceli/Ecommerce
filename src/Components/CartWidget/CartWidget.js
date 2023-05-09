@@ -5,12 +5,12 @@ import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
 const CartWidget = () => {
-    const { totalQuantity } = useContext(CartContext)
+    const { getTotalItems } = useContext(CartContext)
     
     return (
     <div>
-    <Link to='/cart' className='CartWidget' style={{ display: totalQuantity > 0 ? 'block': 'none'}}>
-    <IconButton color="primary" aria-label="add to shopping cart"><AddShoppingCartIcon/> {totalQuantity}
+    <Link to='/cart' className='CartWidget' style={{ display: getTotalItems > 0 ? 'block': 'none'}}>
+    <IconButton color="primary" aria-label="add to shopping cart"><AddShoppingCartIcon/> {getTotalItems}
     </IconButton>
     </Link>
     </div>
