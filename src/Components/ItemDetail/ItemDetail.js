@@ -3,7 +3,7 @@ import { ItemCount } from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
-const ItemDetail = ({ id, title, image, category, description, price, stock }) => {
+const ItemDetail = ({ id, title, image, description, price, stock }) => {
 const [quantityAdded, setQuantityAdded] = useState(false);
 const {addItem} = useContext(CartContext);
 
@@ -31,7 +31,7 @@ addItem(product, quantity)
           </div>
           {
             quantityAdded > 0? (
-              <Link to='/cart' className="option">Terminar Compra</Link>
+              <Link to='/cart' className="btn btn-outline-success">Terminar Compra</Link>
             ) : (<ItemCount initial ={1} stock={stock} onAdd={handleOnAdd} />)
         }
         </div>

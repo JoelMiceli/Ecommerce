@@ -36,7 +36,7 @@ const CheckoutForm = ({ onConfirm }) => {
     <input type="email" class="form-control" id="exampleFormControlInput1" onChange={({ target }) => setEmail(target.value)}placeholder="name@example.com"/>
     </div>
     <div className="button-group">
-        <button type="button" class="btn btn-outline-secondary">Confirmar Pedido</button>
+        <button type="submit" class="btn btn-outline-secondary">Confirmar Pedido</button>
     </div>
     </form>
     </div>

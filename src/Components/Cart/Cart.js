@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { CartContext } from "../context/CartContext"
 import { Link } from "react-router-dom"
-import { Button } from "react-bootstrap"
+
 
 
 const Cart = () => {
@@ -14,16 +14,16 @@ const Cart = () => {
             {cart.length ? cart.map(item => (
         <div key={item.id} className="cart-item">
         <div>
-            <img src={item.image} alt={item.title} />
+            <img src={item.image} alt="" />
         </div>
         <div>{item.title}</div>
         <div>{item.quantity}</div>
         <div>${(item.price * item.quantity).toFixed(2)}</div>
         <div className='containerButtons'>
                                 
-            <Button onClick={() => removeItem(item.id)}>Eliminar</Button>
-            <Button onClick={() => decreaseQuantity(item.id)}>-</Button>
-            <Button onClick={() => increaseQuantity(item.id)}>+</Button>
+            <button class="btn btn-outline-primary" onClick={() => removeItem(item.id)}>Eliminar</button>
+            <button class="btn btn-outline-primary" onClick={() => decreaseQuantity(item.id)}>-</button>
+            <button class="btn btn-outline-primary" onClick={() => increaseQuantity(item.id)}>+</button>
         </div>
         </div>
         )) : <p>No hay productos en el carrito.</p> }
@@ -41,10 +41,10 @@ const Cart = () => {
         <div>Total ${getTotalPrice()}</div>
         </div>
                 
-        <Button onClick={() => { if (cart.length > 0) { clearCart(); } }}>Vaciar Carrito</Button>
+        <button class="btn btn-outline-primary"onClick={() => { if (cart.length > 0) { clearCart(); } }}>Vaciar Carrito</button>
         
-        <Button onClick={()=> clearCart()} className="Button">Limpiar carrito</Button>
-        <Link to='/checkout' class="btn btn-success">Checkout</Link>
+        <button class="btn btn-outline-primary" onClick={()=> clearCart()} >Limpiar carrito</button>
+        <Link to='/checkout' class="btn btn-outline-success">Checkout</Link>
         </div>
         </div>
     );
