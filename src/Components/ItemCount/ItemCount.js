@@ -5,12 +5,12 @@ import useCount from "./myCountHook/useCount";
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
-export const ItemCount = ({ item }) => {
+export const ItemCount = ({ product }) => {
     const {counter, increment, decrement} = useCount()
     const { addItem } = useContext(CartContext);
 
     const handleAddToCart = () => {
-        addItem(item, counter);
+        addItem(product, counter);
       };
     
     return (

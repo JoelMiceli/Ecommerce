@@ -7,46 +7,41 @@ export const CartContext = createContext ({
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
 
-    const addItem = (item, quantity) => {
-        if(!isInCart(item.id)) {
-            setCart([...cart, {...item, quantity}])
-        } else {
-            console.error('El producto ya fue agregado')
-        }
-    }
+    const addItem = (product, quantity) => {
+        if (isInCart(product.id)) {
+            setCart(cart.map(product =>{
+                return product.id === product.id ? { ...product, quantity: product.cuantity + quantity } : product }));
+             } else {
+                   setCart([...cart, { ...product, quantity }]);
+             }
+            }
 
-    const removeItem = (itemId) => {
-        const cartUpdated = cart.filter(prod => prod.id !== itemId)
-        setCart(cartUpdated)
-    }
+    const removeItem = (id) => setCart(cart.filter(product => product.id !== id));  
 
-    const clearCart = () => {
-        setCart([])
-    }
+    const clearCart = () => setCart([]);
 
-    const isInCart = (itemId) => {
-        return cart.some(prod => prod.id === itemId)
-    }
+    const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
+    
 
-    const increaseQuantity = (itemId) => {
-        const newCart = cart.map(prod => {
-            if (prod.id === itemId) {
-                return { ...prod, quantity: prod.quantity + 1 };
+    const increaseQuantity = (id) => {
+        const newCart = cart.map(product => {
+            if (product.id === id) {
+                return { ...product, quantity: product.quantity + 1 };
             } else {
-                return prod;
+                return product;
             }
         });
         setCart(newCart);
     };
 
-    const decreaseQuantity = (itemId) => {
-        const newCart = cart.map(prod => {
-            if (prod.id === itemId) {
-                return { ...prod, quantity: prod.quantity - 1 };
+    const decreaseQuantity = (id) => {
+        const newCart = cart.map(product => {
+            if (product.id === id) {
+                return { ...product, quantity: product.quantity - 1 };
             } else {
-                return prod;
+                return product;
             }
-        }).filter(prod => prod.quantity > 0);
+        }).filter(product => product.quantity > 0);
         setCart(newCart);
     };
 
@@ -55,7 +50,7 @@ export const CartProvider = ({ children }) => {
       };
 
     const getTotalPrice = () => {
-        const totalPrice = cart.reduce((total, prod) => total + prod.price * prod.quantity, 0);
+        const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
         return totalPrice.toFixed(2);
     };
 
