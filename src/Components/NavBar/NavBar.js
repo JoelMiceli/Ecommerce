@@ -25,16 +25,16 @@ function NavBar() {
           </Offcanvas.Header>
           <Offcanvas.Body>
         <Nav className="justify-content-end flex-grow-1 pe-3">
-          <NavLink to={`/category/alimento para perros`} id="btn" className={({ isActive }) =>
+          <NavLink to={`/category/alimentoparaperros`} id="btn" className={({ isActive }) =>
             isActive ? "ActiveOption" : "Option"}> Alimento para Perros </NavLink>
 
-          <NavLink to={`/category/alimento para gatos`} id="btn" className={({ isActive }) =>
+          <NavLink to={`/category/alimentoparagatos`} id="btn" className={({ isActive }) =>
             isActive ? "ActiveOption" : "Option"}> Alimento para Gatos </NavLink>
 
-          <NavLink to={`/category/indumentaria y accesorios`} id="btn" className={({ isActive }) =>
+          <NavLink to={`/category/indumentariayaccesorios`} id="btn" className={({ isActive }) =>
             isActive ? "ActiveOption" : "Option"}> Indumentaria y Accesorios </NavLink>
 
-          <NavLink to={`/category/cuchas y camitas`} id="btn" className={({ isActive }) =>
+          <NavLink to={`/category/cuchasycamitas`} id="btn" className={({ isActive }) =>
             isActive ? "ActiveOption" : "Option"}> Cuchas y Camitas </NavLink>
 
           <NavLink to={`/category/juguetes`} id="btn" className={({ isActive }) =>
