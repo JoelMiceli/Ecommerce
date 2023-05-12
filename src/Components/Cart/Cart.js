@@ -26,7 +26,7 @@ const Cart = () => {
             <button class="btn btn-outline-primary" onClick={() => increaseQuantity(item.id)}>+</button>
         </div>
         </div>
-        )) : <p>No hay productos en el carrito.</p> }
+        )) : <h4>No hay productos en el carrito 😳</h4> }
         </div>
 
             
@@ -34,11 +34,11 @@ const Cart = () => {
             <h2>Resumen del Carrito</h2>
         <div className="summary-item">
                     
-        <div>Productos {getTotalItems()}</div>
+        <div> <h5>Productos</h5> {getTotalItems()}</div>
         </div>
         <div className="summary-item">
                     
-        <div>Total ${getTotalPrice()}</div>
+        <div><h6>Total ${getTotalPrice()}</h6></div>
         </div>
                 
         <button class="btn btn-outline-primary"onClick={() => { if (cart.length > 0) { clearCart(); } }}>Vaciar Carrito</button>
